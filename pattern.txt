@@ -1,0 +1,7 @@
+{
+    "name":"contrail-nightly/contrail-vrouter-agent",
+    "tags":[
+        "1907-0.10-newton","1907-0.10-ocata","1907-0.10-queens","1907-0.10-rocky","1907-0.10","1907-0.11-newton",
+        "1907-0.11-ocata","1907-0.11-queens","1907-0.11-rocky","1907-0.11","1907-0.14-newton","1907-0.14-ocata","1907-0.14-queens",
+        "1907-0.14-rhel-queens","1907-0.14-rocky","1907-0.14","1907-0.15-newton","1907-0.15-ocata","1907-0.15-queens",
+        "1907-0.15-rhel-queens","1907-0.15-rocky","1907-0.15","1907-0.17-newton","1907-0.17-ocata","190
