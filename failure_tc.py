@@ -18,8 +18,9 @@ data = BeautifulSoup(response.text, 'html.parser')
 # print(data.find("tr",{"class":"Error"}).prettify()) 
 error_tc = data.find_all("tr", {"class": "Error"})
 print(len(error_tc))
-# for case in data.find_all("tr", {"class": "Error"}):
-#     print(case)
+for case in data.find_all("tr", {"class": "Error"}):
+    fm = (case.find('td').text).split("[")[0].split(".")[1]
+    print(fm)
 # print(data.prettify())
 
 # with open('error_tc.html','w') as f:
