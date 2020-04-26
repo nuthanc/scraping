@@ -59,4 +59,4 @@ for i,f in enumerate(file_list):
 print(failed_test_cases)
     
 for tc in failed_test_cases:
-    os.system(f"python -m subunit.run {tc}")
+    os.system(f"python3 -m subunit.run {tc}")
