@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 #variables
 
 # target URL to scrap
-# url = input("Enter url to scrape tc: ") 
-url = "http://10.204.216.50/Docs/logs/2005-3_2020_04_25_18_22_59_1587848768.469263/junit-noframes.html"
+url = input("Enter url to scrape tc: ") 
+# url = "http://10.204.216.50/Docs/logs/2005-3_2020_04_25_18_22_59_1587848768.469263/junit-noframes.html"
 # http://10.204.216.50/Docs/logs/2005-3_2020_04_25_18_22_59_1587848768.469263/junit-noframes.html
 
 # headers
