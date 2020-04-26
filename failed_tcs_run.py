@@ -5,12 +5,11 @@ import subprocess
 subprocess.run(["pip3", "install", "bs4"])
 from bs4 import BeautifulSoup
 
-#variables
+os.system("export PYTHONPATH=./scripts:./fixtures TEST_CONFIG_FILE=contrail_test_input.yaml EMAIL_SUBJECT='Python3 k8s mi ha sanity' export MX_GW_TEST=1 export PYTHON3=1")
 
 # target URL to scrap
 url = input("Enter url to scrape tc: ") 
 # url = "http://10.204.216.50/Docs/logs/2005-3_2020_04_25_18_22_59_1587848768.469263/junit-noframes.html"
-# http://10.204.216.50/Docs/logs/2005-3_2020_04_25_18_22_59_1587848768.469263/junit-noframes.html
 
 # headers
 headers = {
