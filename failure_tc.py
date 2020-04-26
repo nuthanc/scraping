@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 #variables
 
 # target URL to scrap
-url = "http://10.204.216.50/Docs/logs/1910-21_2019_10_14_12_18_41/junit-noframes.html"
+url = "http://10.204.216.50/Docs/logs/1911-1_2019_10_22_19_06_42/junit-noframes.html"
 
 # headers
 headers = {
@@ -21,7 +22,19 @@ print(len(error_tc))
 for case in data.find_all("tr", {"class": "Error"}):
     fm = (case.find('td').text).split("[")[0].split(".")[1]
     print(fm)
-# print(data.prettify())
+
+print("\nLocation of test cases\n")
+test_cases = set()
+
+
+for code in data.find_all("code"):
+    cases = re.findall(r'/contrail-test/s.*py',code.text)
+    for case in cases:
+        test_cases.add(case)
+        
+for tc in test_cases:
+    print(tc)
+
 
 # with open('error_tc.html','w') as f:
 #     for case in data.find_all("tr", {"class": "Error"}):
