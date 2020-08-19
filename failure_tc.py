@@ -13,6 +13,17 @@ headers = {
 # send request to download the data
 response = requests.request("GET", url, headers=headers)
 
+tc_list = [] # Stores all the fully qualified test names
+
+
+def construct_fully_qualified_test_name(test_case, test_case_with_class, loc):
+    # import pdb;pdb.set_trace()
+    loc_dot_separated = loc.split('contrail-test/')[1].replace('/', '.').split('.py')[0]
+    test_case_with_class = test_case_with_class.split('[')[0]
+    fq_name_tc = loc_dot_separated + "." + test_case_with_class
+    print("Fully qualified test name:", fq_name_tc)
+    tc_list.append(fq_name_tc)
+
 # parse the downloaded data
 def parse_data():
     data = BeautifulSoup(response.text, 'html.parser')
@@ -28,11 +39,14 @@ def parse_data():
         # import pdb;pdb.set_trace()
         if test_case.startswith('test'):
             loc = re.findall(r'/contrail-test/s.*?py', case[2].text)[0]
+            construct_fully_qualified_test_name(test_case, test_case_with_class, loc)
         else:
             loc = re.findall(r'/contrail-test/.*?py', case[2].text)[0]
+
         print(test_case)
         print("Test case with class:", test_case_with_class)
-        print("Location of test case: ",loc)
+        print("Location of test case:",loc)
         print()
+
 
 parse_data()
